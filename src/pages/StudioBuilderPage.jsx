@@ -170,6 +170,7 @@ export const StudioBuilderPage = () => {
     setStrandCrystals(activeOnes);
     setIsCrystalModalOpen(false);
     showToast('Strand updated with customized crystals!', 'gold');
+    setCurrentStep(3);
   };
 
   const modalActiveCrystals = useMemo(() => {
