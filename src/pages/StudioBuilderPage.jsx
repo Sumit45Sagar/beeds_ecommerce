@@ -537,12 +537,10 @@ export const StudioBuilderPage = () => {
                           key={z.id}
                           onClick={() => handleSelectZodiac(z)}
                           style={{
-                            background: isSelected ? 'rgba(46, 12, 75, 0.88)' : 'rgba(28, 7, 46, 0.72)',
-                            backdropFilter: 'blur(10px)',
-                            WebkitBackdropFilter: 'blur(10px)',
-                            border: isSelected ? '1.5px solid #D9AE4F' : '1px solid rgba(191, 0, 255, 0.22)',
-                            boxShadow: isSelected ? '0 0 22px rgba(191, 0, 255, 0.45), inset 0 0 12px rgba(217, 174, 79, 0.15)' : 'none',
-                            borderRadius: '6px',
+                            background: '#FAF5EB',
+                            border: isSelected ? '2px solid #D9AE4F' : '1px solid rgba(197, 165, 114, 0.35)',
+                            boxShadow: isSelected ? '0 8px 24px rgba(160, 126, 68, 0.22), 0 0 16px rgba(217, 174, 79, 0.28)' : '0 4px 16px rgba(160, 126, 68, 0.08)',
+                            borderRadius: '10px',
                             padding: '16px 12px',
                             cursor: 'pointer',
                             display: 'flex',
@@ -552,7 +550,24 @@ export const StudioBuilderPage = () => {
                             minHeight: '235px'
                           }}
                         >
-                          <span style={{ fontSize: '10px', color: '#6B6676', marginBottom: '8px' }}>
+                          {isSelected && (
+                            <div style={{
+                              position: 'absolute',
+                              top: '12px',
+                              right: '12px',
+                              width: '18px',
+                              height: '18px',
+                              borderRadius: '50%',
+                              background: '#D9AE4F',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              color: '#1A160F'
+                            }}>
+                              <Check size={12} strokeWidth={3} />
+                            </div>
+                          )}
+                          <span style={{ fontSize: '10px', color: '#8C7245', marginBottom: '8px', fontWeight: 600 }}>
                             {z.num}
                           </span>
                           <div style={{
@@ -575,16 +590,16 @@ export const StudioBuilderPage = () => {
                             fontSize: '12.5px',
                             fontWeight: 600,
                             letterSpacing: '0.04em',
-                            color: '#FFFFFF',
+                            color: '#1A160F',
                             textTransform: 'uppercase',
                             marginBottom: '2px'
                           }}>
                             {z.name}
                           </div>
-                          <div style={{ fontSize: '11px', color: '#E5C378', marginBottom: '6px' }}>
+                          <div style={{ fontSize: '11px', color: '#8C6F3D', fontWeight: 600, marginBottom: '6px' }}>
                             {z.sanskrit}
                           </div>
-                          <div style={{ fontSize: '10px', color: '#8E8A9A', lineHeight: 1.45 }}>
+                          <div style={{ fontSize: '10px', color: '#695B44', lineHeight: 1.45 }}>
                             {z.dates} · {z.traits}
                           </div>
                         </div>
@@ -606,12 +621,10 @@ export const StudioBuilderPage = () => {
                           id={`purpose-card-${p.id}`}
                           onClick={() => handleSelectPurpose(p)}
                           style={{
-                            background: isSelected ? 'rgba(46, 12, 75, 0.88)' : 'rgba(28, 7, 46, 0.72)',
-                            backdropFilter: 'blur(10px)',
-                            WebkitBackdropFilter: 'blur(10px)',
-                            border: isSelected ? '1.5px solid #D9AE4F' : '1px solid rgba(191, 0, 255, 0.22)',
-                            boxShadow: isSelected ? '0 0 22px rgba(191, 0, 255, 0.45), inset 0 0 12px rgba(217, 174, 79, 0.15)' : 'none',
-                            borderRadius: '6px',
+                            background: '#FAF5EB',
+                            border: isSelected ? '2px solid #D9AE4F' : '1px solid rgba(197, 165, 114, 0.35)',
+                            boxShadow: isSelected ? '0 8px 24px rgba(160, 126, 68, 0.22), 0 0 16px rgba(217, 174, 79, 0.28)' : '0 4px 16px rgba(160, 126, 68, 0.08)',
+                            borderRadius: '10px',
                             padding: '16px 12px',
                             cursor: 'pointer',
                             display: 'flex',
@@ -622,7 +635,25 @@ export const StudioBuilderPage = () => {
                             boxSizing: 'border-box'
                           }}
                         >
-                          <span style={{ fontSize: '10.5px', color: '#6B6676', marginBottom: '6px' }}>
+                          {isSelected && (
+                            <div style={{
+                              position: 'absolute',
+                              top: '12px',
+                              right: '12px',
+                              width: '18px',
+                              height: '18px',
+                              borderRadius: '50%',
+                              background: '#D9AE4F',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              color: '#1A160F',
+                              zIndex: 5
+                            }}>
+                              <Check size={12} strokeWidth={3} />
+                            </div>
+                          )}
+                          <span style={{ fontSize: '10.5px', color: '#8C7245', marginBottom: '6px', fontWeight: 600 }}>
                             {p.num}
                           </span>
                           <div style={{
@@ -654,7 +685,7 @@ export const StudioBuilderPage = () => {
                             fontSize: '11.5px',
                             fontWeight: 600,
                             letterSpacing: '0.04em',
-                            color: '#FFFFFF',
+                            color: '#1A160F',
                             textTransform: 'uppercase',
                             marginBottom: '6px',
                             lineHeight: 1.3
@@ -663,7 +694,7 @@ export const StudioBuilderPage = () => {
                           </div>
                           <div style={{
                             fontSize: '10.5px',
-                            color: '#8E8A9A',
+                            color: '#695B44',
                             lineHeight: 1.4,
                             marginTop: 'auto'
                           }}>
@@ -782,12 +813,10 @@ export const StudioBuilderPage = () => {
                         id={`intention-card-${intent.id}`}
                         onClick={() => openEditCrystalsModal(intent)}
                         style={{
-                          background: isSelected ? 'rgba(46, 12, 75, 0.88)' : 'rgba(28, 7, 46, 0.72)',
-                          backdropFilter: 'blur(10px)',
-                          WebkitBackdropFilter: 'blur(10px)',
-                          border: isSelected ? '1.5px solid #D9AE4F' : '1px solid rgba(191, 0, 255, 0.22)',
-                          boxShadow: isSelected ? '0 0 22px rgba(191, 0, 255, 0.45), inset 0 0 12px rgba(217, 174, 79, 0.15)' : 'none',
-                          borderRadius: '6px',
+                          background: '#FAF5EB',
+                          border: isSelected ? '2px solid #D9AE4F' : '1px solid rgba(197, 165, 114, 0.35)',
+                          boxShadow: isSelected ? '0 8px 24px rgba(160, 126, 68, 0.22), 0 0 16px rgba(217, 174, 79, 0.28)' : '0 4px 16px rgba(160, 126, 68, 0.08)',
+                          borderRadius: '10px',
                           padding: '16px 14px',
                           cursor: 'pointer',
                           display: 'flex',
@@ -809,18 +838,18 @@ export const StudioBuilderPage = () => {
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
-                            color: '#0A0810'
+                            color: '#1A160F'
                           }}>
                             <Check size={12} strokeWidth={3} />
                           </div>
                         )}
-                        <span style={{ fontSize: '10.5px', color: '#6B6676', marginBottom: '8px' }}>
+                        <span style={{ fontSize: '10.5px', color: '#8C7245', marginBottom: '8px', fontWeight: 600 }}>
                           {numStr}
                         </span>
                         <div style={{
                           fontSize: '12px',
                           fontWeight: 700,
-                          color: '#FFFFFF',
+                          color: '#1A160F',
                           letterSpacing: '0.04em',
                           textTransform: 'uppercase',
                           marginBottom: intent.badge ? '2px' : '6px',
@@ -832,13 +861,14 @@ export const StudioBuilderPage = () => {
                           <div style={{
                             fontSize: '11px',
                             fontStyle: 'italic',
-                            color: '#C5A572',
-                            marginBottom: '6px'
+                            color: '#8C6F3D',
+                            marginBottom: '6px',
+                            fontWeight: 600
                           }}>
                             {intent.badge}
                           </div>
                         )}
-                        <div style={{ fontSize: '11px', color: '#8E8A9A', lineHeight: 1.45, marginBottom: '14px' }}>
+                        <div style={{ fontSize: '11px', color: '#695B44', lineHeight: 1.45, marginBottom: '14px' }}>
                           {intent.desc}
                         </div>
                         <div
@@ -850,7 +880,8 @@ export const StudioBuilderPage = () => {
                           style={{
                             marginTop: 'auto',
                             fontSize: '11px',
-                            color: isSelected ? '#E5C378' : '#6B6676',
+                            color: isSelected ? '#8C6F3D' : '#8C7245',
+                            fontWeight: 600,
                             display: 'flex',
                             alignItems: 'center',
                             gap: '4px',
@@ -867,12 +898,10 @@ export const StudioBuilderPage = () => {
 
                 {/* BOTTOM INTENTION SUMMARY BOX */}
                 <div style={{
-                  background: 'rgba(38, 10, 62, 0.85)',
-                  backdropFilter: 'blur(10px)',
-                  WebkitBackdropFilter: 'blur(10px)',
-                  border: '1px solid #D9AE4F',
-                  boxShadow: '0 0 18px rgba(191, 0, 255, 0.35)',
-                  borderRadius: '6px',
+                  background: '#FAF5EB',
+                  border: '1px solid rgba(197, 165, 114, 0.4)',
+                  boxShadow: '0 4px 16px rgba(160, 126, 68, 0.08)',
+                  borderRadius: '10px',
                   padding: '14px 18px',
                   display: 'flex',
                   alignItems: 'center',
@@ -882,14 +911,14 @@ export const StudioBuilderPage = () => {
                     <div style={{
                       fontSize: '10px',
                       letterSpacing: '0.12em',
-                      color: '#E5C378',
+                      color: '#8C6F3D',
                       textTransform: 'uppercase',
-                      fontWeight: 600,
+                      fontWeight: 700,
                       marginBottom: '2px'
                     }}>
                       {selectedIntention?.title}
                     </div>
-                    <div style={{ fontSize: '13px', color: '#FFFFFF', fontWeight: 500 }}>
+                    <div style={{ fontSize: '13px', color: '#1A160F', fontWeight: 600 }}>
                       {strandCrystals.length} crystals · {totalBeadCount} beads
                     </div>
                   </div>
@@ -897,12 +926,13 @@ export const StudioBuilderPage = () => {
                     <button
                       onClick={() => openEditCrystalsModal(selectedIntention)}
                       style={{
-                        background: 'none',
-                        border: '1px solid rgba(217, 174, 79, 0.45)',
-                        color: '#E5C378',
+                        background: '#FAF4E8',
+                        border: '1px solid rgba(197, 165, 114, 0.5)',
+                        color: '#8C6F3D',
                         padding: '6px 14px',
                         borderRadius: '4px',
                         fontSize: '11.5px',
+                        fontWeight: 600,
                         cursor: 'pointer',
                         transition: 'all 0.2s ease'
                       }}
@@ -936,30 +966,29 @@ export const StudioBuilderPage = () => {
               <div>
                 {/* YOUR DATE OF BIRTH BOX */}
                 <div style={{
-                  background: 'rgba(28, 7, 46, 0.78)',
-                  backdropFilter: 'blur(10px)',
-                  WebkitBackdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(191, 0, 255, 0.22)',
-                  borderRadius: '6px',
+                  background: '#FAF5EB',
+                  border: '1px solid rgba(197, 165, 114, 0.4)',
+                  boxShadow: '0 4px 16px rgba(160, 126, 68, 0.08)',
+                  borderRadius: '10px',
                   padding: '18px 20px',
                   marginBottom: '26px'
                 }}>
                   <div style={{
                     fontSize: '10.5px',
                     letterSpacing: '0.12em',
-                    color: '#E5C378',
+                    color: '#8C6F3D',
                     textTransform: 'uppercase',
-                    fontWeight: 600,
+                    fontWeight: 700,
                     marginBottom: '4px'
                   }}>
                     YOUR DATE OF BIRTH
                   </div>
-                  <div style={{ fontSize: '12.5px', color: '#8E8A9A', marginBottom: '14px' }}>
+                  <div style={{ fontSize: '12.5px', color: '#695B44', marginBottom: '14px' }}>
                     Your Mulank, Bhagyank and zodiac sign are read from this date.
                   </div>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1.2fr', gap: '14px' }}>
                     <div>
-                      <label style={{ display: 'block', fontSize: '10.5px', color: '#6B6676', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                      <label style={{ display: 'block', fontSize: '10.5px', color: '#8C7245', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600 }}>
                         DAY
                       </label>
                       <input
@@ -970,10 +999,10 @@ export const StudioBuilderPage = () => {
                         onChange={(e) => setBirthDate({ ...birthDate, day: e.target.value })}
                         style={{
                           width: '100%',
-                          background: 'rgba(16, 3, 28, 0.85)',
-                          border: '1px solid rgba(191, 0, 255, 0.3)',
+                          background: '#FAF4E8',
+                          border: '1px solid rgba(197, 165, 114, 0.5)',
                           borderRadius: '4px',
-                          color: '#FFFFFF',
+                          color: '#1A160F',
                           padding: '10px 12px',
                           fontSize: '13px',
                           outline: 'none',
@@ -982,7 +1011,7 @@ export const StudioBuilderPage = () => {
                       />
                     </div>
                     <div>
-                      <label style={{ display: 'block', fontSize: '10.5px', color: '#6B6676', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                      <label style={{ display: 'block', fontSize: '10.5px', color: '#8C7245', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600 }}>
                         MONTH
                       </label>
                       <select
@@ -990,10 +1019,10 @@ export const StudioBuilderPage = () => {
                         onChange={(e) => setBirthDate({ ...birthDate, month: e.target.value })}
                         style={{
                           width: '100%',
-                          background: 'rgba(16, 3, 28, 0.85)',
-                          border: '1px solid rgba(191, 0, 255, 0.3)',
+                          background: '#FAF4E8',
+                          border: '1px solid rgba(197, 165, 114, 0.5)',
                           borderRadius: '4px',
-                          color: '#FFFFFF',
+                          color: '#1A160F',
                           padding: '10px 12px',
                           fontSize: '13px',
                           outline: 'none',
@@ -1006,7 +1035,7 @@ export const StudioBuilderPage = () => {
                       </select>
                     </div>
                     <div>
-                      <label style={{ display: 'block', fontSize: '10.5px', color: '#6B6676', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                      <label style={{ display: 'block', fontSize: '10.5px', color: '#8C7245', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600 }}>
                         YEAR
                       </label>
                       <input
@@ -1017,10 +1046,10 @@ export const StudioBuilderPage = () => {
                         onChange={(e) => setBirthDate({ ...birthDate, year: e.target.value })}
                         style={{
                           width: '100%',
-                          background: 'rgba(16, 3, 28, 0.85)',
-                          border: '1px solid rgba(191, 0, 255, 0.3)',
+                          background: '#FAF4E8',
+                          border: '1px solid rgba(197, 165, 114, 0.5)',
                           borderRadius: '4px',
-                          color: '#FFFFFF',
+                          color: '#1A160F',
                           padding: '10px 12px',
                           fontSize: '13px',
                           outline: 'none',
@@ -1050,7 +1079,7 @@ export const StudioBuilderPage = () => {
                       }}>
                         PERSONAL BEADS
                       </div>
-                      <div style={{ fontSize: '12px', color: '#8E8A9A' }}>
+                      <div style={{ fontSize: '12px', color: '#BBB5C3' }}>
                         Each one adds a single bead of its crystal to the strand. Choose add or skip for all three.
                       </div>
                     </div>
@@ -1058,9 +1087,10 @@ export const StudioBuilderPage = () => {
                       <button
                         onClick={() => setAllNatal(true)}
                         style={{
-                          background: 'rgba(36, 10, 58, 0.8)',
-                          border: '1px solid rgba(191, 0, 255, 0.3)',
-                          color: '#BBB5C3',
+                          background: '#FAF5EB',
+                          border: '1px solid rgba(197, 165, 114, 0.5)',
+                          color: '#8C6F3D',
+                          fontWeight: 600,
                           borderRadius: '9999px',
                           padding: '5px 12px',
                           fontSize: '11px',
@@ -1072,9 +1102,10 @@ export const StudioBuilderPage = () => {
                       <button
                         onClick={() => setAllNatal(false)}
                         style={{
-                          background: 'rgba(36, 10, 58, 0.8)',
-                          border: '1px solid rgba(191, 0, 255, 0.3)',
-                          color: '#BBB5C3',
+                          background: '#FAF5EB',
+                          border: '1px solid rgba(197, 165, 114, 0.5)',
+                          color: '#8C6F3D',
+                          fontWeight: 600,
                           borderRadius: '9999px',
                           padding: '5px 12px',
                           fontSize: '11px',
@@ -1094,57 +1125,56 @@ export const StudioBuilderPage = () => {
                   }}>
                     {/* MULANK */}
                     <div style={{
-                      background: natalAttunements.mulank ? 'rgba(46, 12, 75, 0.88)' : 'rgba(28, 7, 46, 0.72)',
-                      backdropFilter: 'blur(10px)',
-                      WebkitBackdropFilter: 'blur(10px)',
-                      border: natalAttunements.mulank ? '1.5px solid #D9AE4F' : '1px solid rgba(191, 0, 255, 0.22)',
-                      boxShadow: natalAttunements.mulank ? '0 0 22px rgba(191, 0, 255, 0.4), inset 0 0 12px rgba(217, 174, 79, 0.12)' : 'none',
-                      borderRadius: '6px',
+                      background: '#FAF5EB',
+                      border: natalAttunements.mulank ? '2px solid #D9AE4F' : '1px solid rgba(197, 165, 114, 0.35)',
+                      boxShadow: natalAttunements.mulank ? '0 8px 24px rgba(160, 126, 68, 0.22), 0 0 16px rgba(217, 174, 79, 0.28)' : '0 4px 16px rgba(160, 126, 68, 0.08)',
+                      borderRadius: '10px',
                       padding: '16px 14px',
                       display: 'flex',
                       flexDirection: 'column'
                     }}>
-                      <div style={{ fontSize: '10px', color: '#E5C378', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 600 }}>
+                      <div style={{ fontSize: '10px', color: '#8C6F3D', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 700 }}>
                         MULANK
                       </div>
                       <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', margin: '4px 0 2px' }}>
-                        <span style={{ fontSize: '26px', fontWeight: 700, color: '#FFFFFF' }}>
+                        <span style={{ fontSize: '26px', fontWeight: 700, color: '#1A160F' }}>
                           {vedicProfile.mulank}
                         </span>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                           <img
                             src={vedicProfile.mulankInfo.img}
                             alt={vedicProfile.mulankInfo.stone}
-                            style={{ width: '22px', height: '22px', borderRadius: '50%', objectFit: 'cover' }}
+                            style={{ width: '24px', height: '24px', borderRadius: '50%', objectFit: 'cover', border: '1px solid rgba(197, 165, 114, 0.5)' }}
                           />
                           <div style={{ textAlign: 'right' }}>
-                            <div style={{ fontSize: '11.5px', color: '#FFFFFF', fontWeight: 600 }}>
+                            <div style={{ fontSize: '11.5px', color: '#1A160F', fontWeight: 600 }}>
                               {vedicProfile.mulankInfo.stone}
                             </div>
-                            <div style={{ fontSize: '10px', color: '#8E8A9A' }}>
+                            <div style={{ fontSize: '10px', color: '#695B44' }}>
                               ₹{vedicProfile.mulankInfo.price}/ bead
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div style={{ fontSize: '10.5px', color: '#6B6676', marginBottom: '10px' }}>
+                      <div style={{ fontSize: '10.5px', color: '#8C7245', marginBottom: '10px', fontWeight: 500 }}>
                         Your birth-day number
                       </div>
-                      <div style={{ fontSize: '11px', color: '#8E8A9A', lineHeight: 1.45, marginBottom: '16px' }}>
+                      <div style={{ fontSize: '11px', color: '#695B44', lineHeight: 1.45, marginBottom: '16px' }}>
                         {vedicProfile.mulankInfo.desc}
                       </div>
                       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginTop: 'auto' }}>
                         <button
                           onClick={() => setNatalAttunements({ ...natalAttunements, mulank: true })}
                           style={{
-                            background: natalAttunements.mulank ? '#F5E8BA' : 'transparent',
-                            color: natalAttunements.mulank ? '#0A0810' : '#BBB5C3',
-                            border: natalAttunements.mulank ? '1px solid #F5E8BA' : '1px solid rgba(255, 255, 255, 0.12)',
+                            background: natalAttunements.mulank ? '#EAD7A5' : '#FAF4E8',
+                            color: natalAttunements.mulank ? '#1A160F' : '#8C7245',
+                            border: natalAttunements.mulank ? '1px solid #D9AE4F' : '1px solid rgba(197, 165, 114, 0.4)',
                             borderRadius: '4px',
                             padding: '8px 4px',
                             fontSize: '11px',
                             fontWeight: 600,
-                            cursor: 'pointer'
+                            cursor: 'pointer',
+                            transition: 'all 0.2s ease'
                           }}
                         >
                           {natalAttunements.mulank ? '✔ Add to strand' : 'Add to strand'}
@@ -1152,14 +1182,15 @@ export const StudioBuilderPage = () => {
                         <button
                           onClick={() => setNatalAttunements({ ...natalAttunements, mulank: false })}
                           style={{
-                            background: !natalAttunements.mulank ? 'rgba(42, 12, 68, 0.9)' : 'transparent',
-                            color: !natalAttunements.mulank ? '#EDE8E1' : '#6B6676',
-                            border: '1px solid rgba(191, 0, 255, 0.25)',
+                            background: !natalAttunements.mulank ? '#1A160F' : '#FAF4E8',
+                            color: !natalAttunements.mulank ? '#FAF5EB' : '#8C7245',
+                            border: !natalAttunements.mulank ? '1px solid #1A160F' : '1px solid rgba(197, 165, 114, 0.4)',
                             borderRadius: '4px',
                             padding: '8px 4px',
                             fontSize: '11px',
                             fontWeight: 500,
-                            cursor: 'pointer'
+                            cursor: 'pointer',
+                            transition: 'all 0.2s ease'
                           }}
                         >
                           Skip
@@ -1169,57 +1200,56 @@ export const StudioBuilderPage = () => {
 
                     {/* BHAGYANK */}
                     <div style={{
-                      background: natalAttunements.bhagyank ? 'rgba(46, 12, 75, 0.88)' : 'rgba(28, 7, 46, 0.72)',
-                      backdropFilter: 'blur(10px)',
-                      WebkitBackdropFilter: 'blur(10px)',
-                      border: natalAttunements.bhagyank ? '1.5px solid #D9AE4F' : '1px solid rgba(191, 0, 255, 0.22)',
-                      boxShadow: natalAttunements.bhagyank ? '0 0 22px rgba(191, 0, 255, 0.4), inset 0 0 12px rgba(217, 174, 79, 0.12)' : 'none',
-                      borderRadius: '6px',
+                      background: '#FAF5EB',
+                      border: natalAttunements.bhagyank ? '2px solid #D9AE4F' : '1px solid rgba(197, 165, 114, 0.35)',
+                      boxShadow: natalAttunements.bhagyank ? '0 8px 24px rgba(160, 126, 68, 0.22), 0 0 16px rgba(217, 174, 79, 0.28)' : '0 4px 16px rgba(160, 126, 68, 0.08)',
+                      borderRadius: '10px',
                       padding: '16px 14px',
                       display: 'flex',
                       flexDirection: 'column'
                     }}>
-                      <div style={{ fontSize: '10px', color: '#E5C378', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 600 }}>
+                      <div style={{ fontSize: '10px', color: '#8C6F3D', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 700 }}>
                         BHAGYANK
                       </div>
                       <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', margin: '4px 0 2px' }}>
-                        <span style={{ fontSize: '26px', fontWeight: 700, color: '#FFFFFF' }}>
+                        <span style={{ fontSize: '26px', fontWeight: 700, color: '#1A160F' }}>
                           {vedicProfile.bhagyank}
                         </span>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                           <img
                             src={vedicProfile.bhagyankInfo.img}
                             alt={vedicProfile.bhagyankInfo.stone}
-                            style={{ width: '22px', height: '22px', borderRadius: '50%', objectFit: 'cover' }}
+                            style={{ width: '24px', height: '24px', borderRadius: '50%', objectFit: 'cover', border: '1px solid rgba(197, 165, 114, 0.5)' }}
                           />
                           <div style={{ textAlign: 'right' }}>
-                            <div style={{ fontSize: '11.5px', color: '#FFFFFF', fontWeight: 600 }}>
+                            <div style={{ fontSize: '11.5px', color: '#1A160F', fontWeight: 600 }}>
                               {vedicProfile.bhagyankInfo.stone}
                             </div>
-                            <div style={{ fontSize: '10px', color: '#8E8A9A' }}>
+                            <div style={{ fontSize: '10px', color: '#695B44' }}>
                               ₹{vedicProfile.bhagyankInfo.price}/ bead
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div style={{ fontSize: '10.5px', color: '#6B6676', marginBottom: '10px' }}>
+                      <div style={{ fontSize: '10.5px', color: '#8C7245', marginBottom: '10px', fontWeight: 500 }}>
                         Your full-date number
                       </div>
-                      <div style={{ fontSize: '11px', color: '#8E8A9A', lineHeight: 1.45, marginBottom: '16px' }}>
+                      <div style={{ fontSize: '11px', color: '#695B44', lineHeight: 1.45, marginBottom: '16px' }}>
                         {vedicProfile.bhagyankInfo.desc}
                       </div>
                       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginTop: 'auto' }}>
                         <button
                           onClick={() => setNatalAttunements({ ...natalAttunements, bhagyank: true })}
                           style={{
-                            background: natalAttunements.bhagyank ? '#F5E8BA' : 'transparent',
-                            color: natalAttunements.bhagyank ? '#0A0810' : '#BBB5C3',
-                            border: natalAttunements.bhagyank ? '1px solid #F5E8BA' : '1px solid rgba(255, 255, 255, 0.12)',
+                            background: natalAttunements.bhagyank ? '#EAD7A5' : '#FAF4E8',
+                            color: natalAttunements.bhagyank ? '#1A160F' : '#8C7245',
+                            border: natalAttunements.bhagyank ? '1px solid #D9AE4F' : '1px solid rgba(197, 165, 114, 0.4)',
                             borderRadius: '4px',
                             padding: '8px 4px',
                             fontSize: '11px',
                             fontWeight: 600,
-                            cursor: 'pointer'
+                            cursor: 'pointer',
+                            transition: 'all 0.2s ease'
                           }}
                         >
                           {natalAttunements.bhagyank ? '✔ Add to strand' : 'Add to strand'}
@@ -1227,14 +1257,15 @@ export const StudioBuilderPage = () => {
                         <button
                           onClick={() => setNatalAttunements({ ...natalAttunements, bhagyank: false })}
                           style={{
-                            background: !natalAttunements.bhagyank ? 'rgba(42, 12, 68, 0.9)' : 'transparent',
-                            color: !natalAttunements.bhagyank ? '#EDE8E1' : '#6B6676',
-                            border: '1px solid rgba(191, 0, 255, 0.25)',
+                            background: !natalAttunements.bhagyank ? '#1A160F' : '#FAF4E8',
+                            color: !natalAttunements.bhagyank ? '#FAF5EB' : '#8C7245',
+                            border: !natalAttunements.bhagyank ? '1px solid #1A160F' : '1px solid rgba(197, 165, 114, 0.4)',
                             borderRadius: '4px',
                             padding: '8px 4px',
                             fontSize: '11px',
                             fontWeight: 500,
-                            cursor: 'pointer'
+                            cursor: 'pointer',
+                            transition: 'all 0.2s ease'
                           }}
                         >
                           Skip
@@ -1244,57 +1275,56 @@ export const StudioBuilderPage = () => {
 
                     {/* ZODIAC */}
                     <div style={{
-                      background: natalAttunements.zodiac ? 'rgba(46, 12, 75, 0.88)' : 'rgba(28, 7, 46, 0.72)',
-                      backdropFilter: 'blur(10px)',
-                      WebkitBackdropFilter: 'blur(10px)',
-                      border: natalAttunements.zodiac ? '1.5px solid #D9AE4F' : '1px solid rgba(191, 0, 255, 0.22)',
-                      boxShadow: natalAttunements.zodiac ? '0 0 22px rgba(191, 0, 255, 0.4), inset 0 0 12px rgba(217, 174, 79, 0.12)' : 'none',
-                      borderRadius: '6px',
+                      background: '#FAF5EB',
+                      border: natalAttunements.zodiac ? '2px solid #D9AE4F' : '1px solid rgba(197, 165, 114, 0.35)',
+                      boxShadow: natalAttunements.zodiac ? '0 8px 24px rgba(160, 126, 68, 0.22), 0 0 16px rgba(217, 174, 79, 0.28)' : '0 4px 16px rgba(160, 126, 68, 0.08)',
+                      borderRadius: '10px',
                       padding: '16px 14px',
                       display: 'flex',
                       flexDirection: 'column'
                     }}>
-                      <div style={{ fontSize: '10px', color: '#E5C378', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 600 }}>
+                      <div style={{ fontSize: '10px', color: '#8C6F3D', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 700 }}>
                         ZODIAC
                       </div>
                       <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', margin: '4px 0 2px' }}>
-                        <span style={{ fontSize: '20px', fontWeight: 700, color: '#FFFFFF' }}>
+                        <span style={{ fontSize: '20px', fontWeight: 700, color: '#1A160F' }}>
                           {vedicProfile.zodiac.name}
                         </span>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                           <img
                             src={vedicProfile.zodiac.img}
                             alt={vedicProfile.zodiac.name}
-                            style={{ width: '22px', height: '22px', borderRadius: '50%', objectFit: 'cover' }}
+                            style={{ width: '24px', height: '24px', borderRadius: '50%', objectFit: 'cover', border: '1px solid rgba(197, 165, 114, 0.5)' }}
                           />
                           <div style={{ textAlign: 'right' }}>
-                            <div style={{ fontSize: '11.5px', color: '#FFFFFF', fontWeight: 600 }}>
+                            <div style={{ fontSize: '11.5px', color: '#1A160F', fontWeight: 600 }}>
                               {vedicProfile.zodiac.stone}
                             </div>
-                            <div style={{ fontSize: '10px', color: '#8E8A9A' }}>
+                            <div style={{ fontSize: '10px', color: '#695B44' }}>
                               ₹{vedicProfile.zodiac.price}/ bead
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div style={{ fontSize: '10.5px', color: '#6B6676', marginBottom: '10px' }}>
+                      <div style={{ fontSize: '10.5px', color: '#8C7245', marginBottom: '10px', fontWeight: 500 }}>
                         {vedicProfile.zodiac.dates}
                       </div>
-                      <div style={{ fontSize: '11px', color: '#8E8A9A', lineHeight: 1.45, marginBottom: '16px' }}>
+                      <div style={{ fontSize: '11px', color: '#695B44', lineHeight: 1.45, marginBottom: '16px' }}>
                         Calibrated with {vedicProfile.zodiac.stone} for {vedicProfile.zodiac.traits.toLowerCase()}.
                       </div>
                       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginTop: 'auto' }}>
                         <button
                           onClick={() => setNatalAttunements({ ...natalAttunements, zodiac: true })}
                           style={{
-                            background: natalAttunements.zodiac ? '#F5E8BA' : 'transparent',
-                            color: natalAttunements.zodiac ? '#0A0810' : '#BBB5C3',
-                            border: natalAttunements.zodiac ? '1px solid #F5E8BA' : '1px solid rgba(255, 255, 255, 0.12)',
+                            background: natalAttunements.zodiac ? '#EAD7A5' : '#FAF4E8',
+                            color: natalAttunements.zodiac ? '#1A160F' : '#8C7245',
+                            border: natalAttunements.zodiac ? '1px solid #D9AE4F' : '1px solid rgba(197, 165, 114, 0.4)',
                             borderRadius: '4px',
                             padding: '8px 4px',
                             fontSize: '11px',
                             fontWeight: 600,
-                            cursor: 'pointer'
+                            cursor: 'pointer',
+                            transition: 'all 0.2s ease'
                           }}
                         >
                           {natalAttunements.zodiac ? '✔ Add to strand' : 'Add to strand'}
@@ -1302,14 +1332,15 @@ export const StudioBuilderPage = () => {
                         <button
                           onClick={() => setNatalAttunements({ ...natalAttunements, zodiac: false })}
                           style={{
-                            background: !natalAttunements.zodiac ? 'rgba(42, 12, 68, 0.9)' : 'transparent',
-                            color: !natalAttunements.zodiac ? '#EDE8E1' : '#6B6676',
-                            border: '1px solid rgba(191, 0, 255, 0.25)',
+                            background: !natalAttunements.zodiac ? '#1A160F' : '#FAF4E8',
+                            color: !natalAttunements.zodiac ? '#FAF5EB' : '#8C7245',
+                            border: !natalAttunements.zodiac ? '1px solid #1A160F' : '1px solid rgba(197, 165, 114, 0.4)',
                             borderRadius: '4px',
                             padding: '8px 4px',
                             fontSize: '11px',
                             fontWeight: 500,
-                            cursor: 'pointer'
+                            cursor: 'pointer',
+                            transition: 'all 0.2s ease'
                           }}
                         >
                           Skip
@@ -1478,12 +1509,10 @@ export const StudioBuilderPage = () => {
                           key={charm.id}
                           onClick={() => setSelectedCharm(charm)}
                           style={{
-                            background: isSelected ? 'rgba(46, 12, 75, 0.88)' : 'rgba(28, 7, 46, 0.72)',
-                            backdropFilter: 'blur(10px)',
-                            WebkitBackdropFilter: 'blur(10px)',
-                            border: isSelected ? '1.5px solid #D9AE4F' : '1px solid rgba(191, 0, 255, 0.22)',
-                            boxShadow: isSelected ? '0 0 22px rgba(191, 0, 255, 0.45), inset 0 0 12px rgba(217, 174, 79, 0.15)' : 'none',
-                            borderRadius: '6px',
+                            background: '#FAF5EB',
+                            border: isSelected ? '2px solid #D9AE4F' : '1px solid rgba(197, 165, 114, 0.35)',
+                            boxShadow: isSelected ? '0 8px 24px rgba(160, 126, 68, 0.22), 0 0 16px rgba(217, 174, 79, 0.28)' : '0 4px 16px rgba(160, 126, 68, 0.08)',
+                            borderRadius: '10px',
                             padding: '22px 18px',
                             cursor: 'pointer',
                             position: 'relative',
@@ -1504,7 +1533,7 @@ export const StudioBuilderPage = () => {
                               display: 'flex',
                               alignItems: 'center',
                               justifyContent: 'center',
-                              color: '#0A0810'
+                              color: '#1A160F'
                             }}>
                               <Check size={12} strokeWidth={3} />
                             </div>
@@ -1513,11 +1542,12 @@ export const StudioBuilderPage = () => {
                             width: '44px',
                             height: '44px',
                             borderRadius: '50%',
-                            border: '1px solid rgba(217, 174, 79, 0.4)',
+                            border: '1px solid rgba(197, 165, 114, 0.5)',
+                            background: '#FAF4E8',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
-                            color: '#E5C378',
+                            color: '#8C6F3D',
                             fontSize: '20px',
                             marginBottom: '16px'
                           }}>
@@ -1528,13 +1558,13 @@ export const StudioBuilderPage = () => {
                             fontSize: '14px',
                             fontWeight: 700,
                             letterSpacing: '0.04em',
-                            color: '#FFFFFF',
+                            color: '#1A160F',
                             textTransform: 'uppercase',
                             marginBottom: '6px'
                           }}>
                             {charm.name}
                           </div>
-                          <div style={{ fontSize: '11.5px', color: '#8E8A9A', lineHeight: 1.45 }}>
+                          <div style={{ fontSize: '11.5px', color: '#695B44', lineHeight: 1.45 }}>
                             {charm.subtitle}
                           </div>
                         </div>
@@ -1567,12 +1597,10 @@ export const StudioBuilderPage = () => {
                           key={thr.id}
                           onClick={() => setSelectedThread(thr)}
                           style={{
-                            background: isSelected ? 'rgba(46, 12, 75, 0.88)' : 'rgba(28, 7, 46, 0.72)',
-                            backdropFilter: 'blur(10px)',
-                            WebkitBackdropFilter: 'blur(10px)',
-                            border: isSelected ? '1.5px solid #D9AE4F' : '1px solid rgba(191, 0, 255, 0.22)',
-                            boxShadow: isSelected ? '0 0 22px rgba(191, 0, 255, 0.45), inset 0 0 12px rgba(217, 174, 79, 0.15)' : 'none',
-                            borderRadius: '6px',
+                            background: '#FAF5EB',
+                            border: isSelected ? '2px solid #D9AE4F' : '1px solid rgba(197, 165, 114, 0.35)',
+                            boxShadow: isSelected ? '0 8px 24px rgba(160, 126, 68, 0.22), 0 0 16px rgba(217, 174, 79, 0.28)' : '0 4px 16px rgba(160, 126, 68, 0.08)',
+                            borderRadius: '10px',
                             padding: '22px 18px',
                             cursor: 'pointer',
                             position: 'relative',
@@ -1594,7 +1622,7 @@ export const StudioBuilderPage = () => {
                               display: 'flex',
                               alignItems: 'center',
                               justifyContent: 'center',
-                              color: '#0A0810'
+                              color: '#1A160F'
                             }}>
                               <Check size={12} strokeWidth={3} />
                             </div>
@@ -1603,11 +1631,12 @@ export const StudioBuilderPage = () => {
                             width: '40px',
                             height: '40px',
                             borderRadius: '50%',
-                            border: '1px solid rgba(255, 255, 255, 0.15)',
+                            border: '1px solid rgba(197, 165, 114, 0.5)',
+                            background: '#FAF4E8',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
-                            color: '#E5C378',
+                            color: '#8C6F3D',
                             fontSize: '16px',
                             flexShrink: 0
                           }}>
@@ -1619,13 +1648,13 @@ export const StudioBuilderPage = () => {
                               fontSize: '13px',
                               fontWeight: 700,
                               letterSpacing: '0.04em',
-                              color: '#FFFFFF',
+                              color: '#1A160F',
                               textTransform: 'uppercase',
                               marginBottom: '2px'
                             }}>
                               {thr.name}
                             </div>
-                            <div style={{ fontSize: '11px', color: '#8E8A9A' }}>
+                            <div style={{ fontSize: '11px', color: '#695B44' }}>
                               {thr.badge}
                             </div>
                           </div>
@@ -1644,11 +1673,10 @@ export const StudioBuilderPage = () => {
               <div>
                 {/* THE COMPOSITION BANNER */}
                 <div style={{
-                  background: 'rgba(28, 7, 46, 0.78)',
-                  backdropFilter: 'blur(10px)',
-                  WebkitBackdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(191, 0, 255, 0.22)',
-                  borderRadius: '6px',
+                  background: '#FAF5EB',
+                  border: '1px solid rgba(197, 165, 114, 0.4)',
+                  boxShadow: '0 4px 16px rgba(160, 126, 68, 0.08)',
+                  borderRadius: '10px',
                   padding: '18px 22px',
                   display: 'flex',
                   alignItems: 'center',
@@ -1666,9 +1694,9 @@ export const StudioBuilderPage = () => {
                     <div style={{
                       fontSize: '10px',
                       letterSpacing: '0.12em',
-                      color: '#E5C378',
+                      color: '#8C6F3D',
                       textTransform: 'uppercase',
-                      fontWeight: 600,
+                      fontWeight: 700,
                       marginBottom: '2px'
                     }}>
                       THE COMPOSITION
@@ -1677,14 +1705,14 @@ export const StudioBuilderPage = () => {
                       fontFamily: 'var(--font-serif, serif)',
                       fontSize: '22px',
                       fontWeight: 600,
-                      color: '#FFFFFF',
+                      color: '#1A160F',
                       letterSpacing: '0.04em',
                       textTransform: 'uppercase',
                       marginBottom: '2px'
                     }}>
                       {selectedIntention?.title}
                     </div>
-                    <div style={{ fontSize: '12px', color: '#8E8A9A' }}>
+                    <div style={{ fontSize: '12px', color: '#695B44' }}>
                       {selectedPurpose.title} · {selectedIntention?.title}
                     </div>
                   </div>
@@ -1699,71 +1727,69 @@ export const StudioBuilderPage = () => {
                 }}>
                   {/* PURPOSE & INTENTION */}
                   <div style={{
-                    background: 'rgba(28, 7, 46, 0.78)',
-                    backdropFilter: 'blur(10px)',
-                    WebkitBackdropFilter: 'blur(10px)',
-                    border: '1px solid rgba(191, 0, 255, 0.22)',
-                    borderRadius: '6px',
+                    background: '#FAF5EB',
+                    border: '1px solid rgba(197, 165, 114, 0.35)',
+                    boxShadow: '0 4px 16px rgba(160, 126, 68, 0.08)',
+                    borderRadius: '10px',
                     padding: '16px 14px'
                   }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-                      <span style={{ fontSize: '10px', color: '#E5C378', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 600 }}>
+                      <span style={{ fontSize: '10px', color: '#8C6F3D', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 700 }}>
                         PURPOSE & INTENTION
                       </span>
                       <button
                         onClick={() => setCurrentStep(1)}
-                        style={{ background: 'none', border: 'none', color: '#EDE8E1', fontSize: '11px', cursor: 'pointer', textDecoration: 'underline' }}
+                        style={{ background: 'none', border: 'none', color: '#8C6F3D', fontSize: '11px', cursor: 'pointer', textDecoration: 'underline', fontWeight: 600 }}
                       >
                         Edit
                       </button>
                     </div>
-                    <div style={{ fontSize: '12.5px', fontWeight: 600, color: '#FFFFFF', marginBottom: '2px' }}>
+                    <div style={{ fontSize: '12.5px', fontWeight: 600, color: '#1A160F', marginBottom: '2px' }}>
                       {selectedPurpose.shortTitle || selectedPurpose.title}
                     </div>
-                    <div style={{ fontSize: '11px', color: '#8E8A9A' }}>
+                    <div style={{ fontSize: '11px', color: '#695B44' }}>
                       {selectedIntention?.title}
                     </div>
                   </div>
 
                   {/* YOUR READING */}
                   <div style={{
-                    background: 'rgba(28, 7, 46, 0.78)',
-                    backdropFilter: 'blur(10px)',
-                    WebkitBackdropFilter: 'blur(10px)',
-                    border: '1px solid rgba(191, 0, 255, 0.22)',
-                    borderRadius: '6px',
+                    background: '#FAF5EB',
+                    border: '1px solid rgba(197, 165, 114, 0.35)',
+                    boxShadow: '0 4px 16px rgba(160, 126, 68, 0.08)',
+                    borderRadius: '10px',
                     padding: '16px 14px'
                   }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-                      <span style={{ fontSize: '10px', color: '#E5C378', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 600 }}>
+                      <span style={{ fontSize: '10px', color: '#8C6F3D', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 700 }}>
                         YOUR READING
                       </span>
                       <button
                         onClick={() => setCurrentStep(3)}
-                        style={{ background: 'none', border: 'none', color: '#EDE8E1', fontSize: '11px', cursor: 'pointer', textDecoration: 'underline' }}
+                        style={{ background: 'none', border: 'none', color: '#8C6F3D', fontSize: '11px', cursor: 'pointer', textDecoration: 'underline', fontWeight: 600 }}
                       >
                         Edit
                       </button>
                     </div>
-                    <div style={{ fontSize: '12.5px', fontWeight: 600, color: '#FFFFFF', marginBottom: '6px' }}>
+                    <div style={{ fontSize: '12.5px', fontWeight: 600, color: '#1A160F', marginBottom: '6px' }}>
                       {birthDate.day} {monthNames.find(m => m.val === birthDate.month)?.label || 'Aug'} {birthDate.year}
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '3px', fontSize: '10.5px' }}>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', color: '#8E8A9A' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', color: '#695B44' }}>
                         <span>Mulank {vedicProfile.mulank}</span>
-                        <span style={{ color: natalAttunements.mulank ? '#E5C378' : '#6B6676' }}>
+                        <span style={{ color: natalAttunements.mulank ? '#8C6F3D' : '#999', fontWeight: natalAttunements.mulank ? 600 : 400 }}>
                           {vedicProfile.mulankInfo.stone} · {natalAttunements.mulank ? 'Added' : 'Skipped'}
                         </span>
                       </div>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', color: '#8E8A9A' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', color: '#695B44' }}>
                         <span>Bhagyank {vedicProfile.bhagyank}</span>
-                        <span style={{ color: natalAttunements.bhagyank ? '#E5C378' : '#6B6676' }}>
+                        <span style={{ color: natalAttunements.bhagyank ? '#8C6F3D' : '#999', fontWeight: natalAttunements.bhagyank ? 600 : 400 }}>
                           {vedicProfile.bhagyankInfo.stone} · {natalAttunements.bhagyank ? 'Added' : 'Skipped'}
                         </span>
                       </div>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', color: '#8E8A9A' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', color: '#695B44' }}>
                         <span>{vedicProfile.zodiac.name}</span>
-                        <span style={{ color: natalAttunements.zodiac ? '#E5C378' : '#6B6676' }}>
+                        <span style={{ color: natalAttunements.zodiac ? '#8C6F3D' : '#999', fontWeight: natalAttunements.zodiac ? 600 : 400 }}>
                           {vedicProfile.zodiac.stone} · {natalAttunements.zodiac ? 'Added' : 'Skipped'}
                         </span>
                       </div>
@@ -1772,31 +1798,30 @@ export const StudioBuilderPage = () => {
 
                   {/* CHARM & THREAD */}
                   <div style={{
-                    background: 'rgba(28, 7, 46, 0.78)',
-                    backdropFilter: 'blur(10px)',
-                    WebkitBackdropFilter: 'blur(10px)',
-                    border: '1px solid rgba(191, 0, 255, 0.22)',
-                    borderRadius: '6px',
+                    background: '#FAF5EB',
+                    border: '1px solid rgba(197, 165, 114, 0.35)',
+                    boxShadow: '0 4px 16px rgba(160, 126, 68, 0.08)',
+                    borderRadius: '10px',
                     padding: '16px 14px'
                   }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-                      <span style={{ fontSize: '10px', color: '#E5C378', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 600 }}>
+                      <span style={{ fontSize: '10px', color: '#8C6F3D', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 700 }}>
                         CHARM & THREAD
                       </span>
                       <button
                         onClick={() => setCurrentStep(4)}
-                        style={{ background: 'none', border: 'none', color: '#EDE8E1', fontSize: '11px', cursor: 'pointer', textDecoration: 'underline' }}
+                        style={{ background: 'none', border: 'none', color: '#8C6F3D', fontSize: '11px', cursor: 'pointer', textDecoration: 'underline', fontWeight: 600 }}
                       >
                         Edit
                       </button>
                     </div>
-                    <div style={{ fontSize: '12.5px', fontWeight: 600, color: '#FFFFFF', marginBottom: '2px' }}>
+                    <div style={{ fontSize: '12.5px', fontWeight: 600, color: '#1A160F', marginBottom: '2px' }}>
                       {selectedCharm.name} · {selectedCharm.material}
                     </div>
-                    <div style={{ fontSize: '11px', color: '#8E8A9A', marginBottom: '2px' }}>
+                    <div style={{ fontSize: '11px', color: '#695B44', marginBottom: '2px' }}>
                       {selectedThread.desc}
                     </div>
-                    <div style={{ fontSize: '11px', color: '#8E8A9A' }}>
+                    <div style={{ fontSize: '11px', color: '#695B44' }}>
                       Bead size 8mm
                     </div>
                   </div>
@@ -1804,21 +1829,20 @@ export const StudioBuilderPage = () => {
 
                 {/* CRYSTALS ITEMIZED BOX */}
                 <div style={{
-                  background: 'rgba(28, 7, 46, 0.78)',
-                  backdropFilter: 'blur(10px)',
-                  WebkitBackdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(191, 0, 255, 0.22)',
-                  borderRadius: '6px',
+                  background: '#FAF5EB',
+                  border: '1px solid rgba(197, 165, 114, 0.35)',
+                  boxShadow: '0 4px 16px rgba(160, 126, 68, 0.08)',
+                  borderRadius: '10px',
                   padding: '18px 20px',
                   marginBottom: '20px'
                 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '14px' }}>
-                    <span style={{ fontSize: '10.5px', color: '#E5C378', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 600 }}>
+                    <span style={{ fontSize: '10.5px', color: '#8C6F3D', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 700 }}>
                       CRYSTALS · {totalBeadCount} BEADS
                     </span>
                     <button
                       onClick={() => setCurrentStep(3)}
-                      style={{ background: 'none', border: 'none', color: '#EDE8E1', fontSize: '11px', cursor: 'pointer', textDecoration: 'underline' }}
+                      style={{ background: 'none', border: 'none', color: '#8C6F3D', fontSize: '11px', cursor: 'pointer', textDecoration: 'underline', fontWeight: 600 }}
                     >
                       Edit
                     </button>
@@ -1835,40 +1859,41 @@ export const StudioBuilderPage = () => {
                             alignItems: 'center',
                             justifyContent: 'space-between',
                             paddingBottom: '8px',
-                            borderBottom: '1px solid rgba(255, 255, 255, 0.04)'
+                            borderBottom: '1px solid rgba(197, 165, 114, 0.2)'
                           }}
                         >
                           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                             <img
                               src={c.img || '/assets/studio3_img_1.jpg'}
                               alt={c.name}
-                              style={{ width: '28px', height: '28px', borderRadius: '50%', objectFit: 'cover' }}
+                              style={{ width: '28px', height: '28px', borderRadius: '50%', objectFit: 'cover', border: '1px solid rgba(197, 165, 114, 0.5)' }}
                             />
                             <div>
                               <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                                <span style={{ fontSize: '12.5px', color: '#FFFFFF', fontWeight: 600 }}>
+                                <span style={{ fontSize: '12.5px', color: '#1A160F', fontWeight: 600 }}>
                                   {c.name}
                                 </span>
                                 {c.badge && (
                                   <span style={{
                                     fontSize: '9px',
-                                    color: '#E5C378',
-                                    border: '1px solid rgba(217, 174, 79, 0.3)',
+                                    color: '#8C6F3D',
+                                    border: '1px solid rgba(197, 165, 114, 0.5)',
                                     borderRadius: '2px',
                                     padding: '1px 4px',
                                     letterSpacing: '0.08em',
-                                    textTransform: 'uppercase'
+                                    textTransform: 'uppercase',
+                                    fontWeight: 600
                                   }}>
                                     {c.badge}
                                   </span>
                                 )}
                               </div>
-                              <div style={{ fontSize: '11px', color: '#8E8A9A' }}>
+                              <div style={{ fontSize: '11px', color: '#695B44' }}>
                                 {c.count || 1} × ₹{c.pricePerBead}
                               </div>
                             </div>
                           </div>
-                          <span style={{ fontSize: '12.5px', color: '#FFFFFF', fontWeight: 600 }}>
+                          <span style={{ fontSize: '12.5px', color: '#1A160F', fontWeight: 600 }}>
                             ₹{rowTotal}
                           </span>
                         </div>
@@ -1879,57 +1904,56 @@ export const StudioBuilderPage = () => {
 
                 {/* DETAILED PRICE BREAKDOWN BOX */}
                 <div style={{
-                  background: 'rgba(28, 7, 46, 0.78)',
-                  backdropFilter: 'blur(10px)',
-                  WebkitBackdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(191, 0, 255, 0.22)',
-                  borderRadius: '6px',
+                  background: '#FAF5EB',
+                  border: '1px solid rgba(197, 165, 114, 0.35)',
+                  boxShadow: '0 4px 16px rgba(160, 126, 68, 0.08)',
+                  borderRadius: '10px',
                   padding: '20px 22px'
                 }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '9px', marginBottom: '14px' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#BBB5C3' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#695B44' }}>
                       <span>Crystals</span>
                       <span>₹{priceComponents.crystals}</span>
                     </div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#BBB5C3' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#695B44' }}>
                       <span>Box</span>
                       <span>₹{priceComponents.box}</span>
                     </div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#BBB5C3' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#695B44' }}>
                       <span>Clasp</span>
                       <span>₹{priceComponents.clasp}</span>
                     </div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#BBB5C3' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#695B44' }}>
                       <span>Charm</span>
                       <span>₹{priceComponents.charm}</span>
                     </div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#BBB5C3' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#695B44' }}>
                       <span>CZ</span>
                       <span>₹{priceComponents.cz}</span>
                     </div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#BBB5C3' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#695B44' }}>
                       <span>Thread</span>
                       <span>₹{priceComponents.thread}</span>
                     </div>
                   </div>
 
                   <div style={{
-                    borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+                    borderTop: '1px solid rgba(197, 165, 114, 0.3)',
                     paddingTop: '14px',
                     display: 'flex',
                     alignItems: 'baseline',
                     justifyContent: 'space-between',
                     marginBottom: '10px'
                   }}>
-                    <span style={{ fontSize: '12px', fontWeight: 700, color: '#BBB5C3', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                    <span style={{ fontSize: '12px', fontWeight: 700, color: '#8C7245', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                       TOTAL
                     </span>
-                    <span style={{ fontSize: '24px', fontWeight: 700, color: '#FFFFFF' }}>
+                    <span style={{ fontSize: '24px', fontWeight: 700, color: '#1A160F' }}>
                       ₹{priceComponents.total}
                     </span>
                   </div>
 
-                  <div style={{ fontSize: '11px', color: '#6B6676' }}>
+                  <div style={{ fontSize: '11px', color: '#8C7245' }}>
                     Delivery and taxes are worked out at checkout.
                   </div>
                 </div>
