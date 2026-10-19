@@ -13,7 +13,7 @@ import {
   getRecommendedCrystalsForIntention
 } from '../data/atelierFlowData';
 import { LiveStrandViewer } from '../components/LiveStrandViewer';
-import { Check, Plus, Minus, RotateCw, X } from 'lucide-react';
+import { Check, Plus, Minus, RotateCw, X, CheckCircle2 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 export const StudioBuilderPage = () => {
@@ -716,11 +716,10 @@ export const StudioBuilderPage = () => {
               <div>
                 {/* YOUR PURPOSE BANNER WITH CHANGE BUTTON */}
                 <div style={{
-                  background: 'rgba(28, 7, 46, 0.78)',
-                  backdropFilter: 'blur(10px)',
-                  WebkitBackdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(191, 0, 255, 0.22)',
-                  borderRadius: '6px',
+                  background: '#FAF5EB',
+                  border: '1px solid rgba(197, 165, 114, 0.4)',
+                  boxShadow: '0 4px 16px rgba(160, 126, 68, 0.08)',
+                  borderRadius: '10px',
                   padding: '14px 18px',
                   display: 'flex',
                   alignItems: 'center',
@@ -736,8 +735,8 @@ export const StudioBuilderPage = () => {
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      WebkitMaskImage: 'radial-gradient(ellipse 46% 46% at 50% 49%, black 52%, rgba(0,0,0,0.75) 68%, transparent 88%)',
-                      maskImage: 'radial-gradient(ellipse 46% 46% at 50% 49%, black 52%, rgba(0,0,0,0.75) 68%, transparent 88%)'
+                      border: '1px solid rgba(197, 165, 114, 0.3)',
+                      background: '#EFE4CF'
                     }}>
                       <img
                         src={selectedPurpose.icon}
@@ -749,9 +748,9 @@ export const StudioBuilderPage = () => {
                       <div style={{
                         fontSize: '10px',
                         letterSpacing: '0.12em',
-                        color: '#E5C378',
+                        color: '#8C6F3D',
                         textTransform: 'uppercase',
-                        fontWeight: 600
+                        fontWeight: 700
                       }}>
                         YOUR PURPOSE
                       </div>
@@ -759,7 +758,7 @@ export const StudioBuilderPage = () => {
                         fontFamily: 'var(--font-serif, serif)',
                         fontSize: '15px',
                         fontWeight: 600,
-                        color: '#FFFFFF',
+                        color: '#1A160F',
                         letterSpacing: '0.04em',
                         textTransform: 'uppercase'
                       }}>
@@ -772,8 +771,9 @@ export const StudioBuilderPage = () => {
                     style={{
                       background: 'none',
                       border: 'none',
-                      color: '#EDE8E1',
+                      color: '#8C6F3D',
                       fontSize: '12px',
+                      fontWeight: 600,
                       cursor: 'pointer',
                       textDecoration: 'underline'
                     }}
@@ -1376,11 +1376,10 @@ export const StudioBuilderPage = () => {
                         <div
                           key={crystal.id}
                           style={{
-                            background: 'rgba(28, 7, 46, 0.72)',
-                            backdropFilter: 'blur(10px)',
-                            WebkitBackdropFilter: 'blur(10px)',
-                            border: '1px solid rgba(191, 0, 255, 0.2)',
-                            borderRadius: '6px',
+                            background: '#FAF4E8',
+                            border: '1px solid rgba(197, 165, 114, 0.35)',
+                            boxShadow: '0 2px 8px rgba(160, 126, 68, 0.06)',
+                            borderRadius: '8px',
                             padding: '12px 18px',
                             display: 'flex',
                             alignItems: 'center',
@@ -1391,28 +1390,37 @@ export const StudioBuilderPage = () => {
                             <img
                               src={crystal.img || '/assets/studio3_img_1.jpg'}
                               alt={crystal.name}
-                              style={{ width: '32px', height: '32px', borderRadius: '50%', objectFit: 'cover' }}
+                              style={{
+                                width: '36px',
+                                height: '36px',
+                                borderRadius: '6px',
+                                objectFit: 'cover',
+                                border: '1px solid rgba(197, 165, 114, 0.3)',
+                                background: '#EFE4CF'
+                              }}
                             />
                             <div>
                               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                <span style={{ fontSize: '13px', fontWeight: 600, color: '#FFFFFF' }}>
+                                <span style={{ fontSize: '13px', fontWeight: 600, color: '#1A160F' }}>
                                   {crystal.name}
                                 </span>
                                 {crystal.badge && (
                                   <span style={{
                                     fontSize: '9.5px',
-                                    color: '#E5C378',
-                                    border: '1px solid rgba(217, 174, 79, 0.3)',
+                                    color: '#8C6F3D',
+                                    border: '1px solid rgba(197, 165, 114, 0.4)',
                                     borderRadius: '3px',
                                     padding: '1px 5px',
                                     letterSpacing: '0.08em',
-                                    textTransform: 'uppercase'
+                                    textTransform: 'uppercase',
+                                    background: '#FAF5EB',
+                                    fontWeight: 600
                                   }}>
                                     {crystal.badge}
                                   </span>
                                 )}
                               </div>
-                              <div style={{ fontSize: '11px', color: '#8E8A9A', marginTop: '2px' }}>
+                              <div style={{ fontSize: '11px', color: '#695B44', marginTop: '2px' }}>
                                 ₹{crystal.pricePerBead}/ bead · ₹{subtotal}
                               </div>
                             </div>
@@ -1423,8 +1431,8 @@ export const StudioBuilderPage = () => {
                             display: 'flex',
                             alignItems: 'center',
                             gap: '12px',
-                            background: 'rgba(16, 3, 28, 0.85)',
-                            border: '1px solid rgba(191, 0, 255, 0.3)',
+                            background: '#FAF5EB',
+                            border: '1px solid rgba(197, 165, 114, 0.5)',
                             borderRadius: '4px',
                             padding: '4px 10px'
                           }}>
@@ -1441,7 +1449,7 @@ export const StudioBuilderPage = () => {
                               style={{
                                 background: 'none',
                                 border: 'none',
-                                color: '#AAA',
+                                color: '#1A160F',
                                 cursor: 'pointer',
                                 display: 'flex',
                                 alignItems: 'center',
@@ -1450,7 +1458,7 @@ export const StudioBuilderPage = () => {
                             >
                               <Minus size={13} />
                             </button>
-                            <span style={{ fontSize: '12px', fontWeight: 600, color: '#FFFFFF', minWidth: '16px', textAlign: 'center' }}>
+                            <span style={{ fontSize: '12px', fontWeight: 700, color: '#1A160F', minWidth: '16px', textAlign: 'center' }}>
                               {crystal.count || 1}
                             </span>
                             <button
@@ -1463,7 +1471,7 @@ export const StudioBuilderPage = () => {
                               style={{
                                 background: 'none',
                                 border: 'none',
-                                color: crystal.isNatal ? '#444' : '#AAA',
+                                color: crystal.isNatal ? '#C5A572' : '#1A160F',
                                 cursor: crystal.isNatal ? 'not-allowed' : 'pointer',
                                 display: 'flex',
                                 alignItems: 'center',
@@ -2363,7 +2371,7 @@ export const StudioBuilderPage = () => {
       </div>
 
       {/* ====================================================
-          EDIT CRYSTALS MODAL (REPLICATING FIGMA PIXEL-BY-PIXEL)
+          EDIT CRYSTALS MODAL (MATCHING PRODUCT CARD STYLING)
          ==================================================== */}
       {isCrystalModalOpen && (
         <div
@@ -2371,7 +2379,7 @@ export const StudioBuilderPage = () => {
             position: 'fixed',
             inset: 0,
             zIndex: 9999,
-            background: 'rgba(5, 2, 12, 0.82)',
+            background: 'rgba(12, 9, 6, 0.72)',
             backdropFilter: 'blur(10px)',
             WebkitBackdropFilter: 'blur(10px)',
             display: 'flex',
@@ -2384,141 +2392,86 @@ export const StudioBuilderPage = () => {
         >
           <div
             style={{
-              background: '#12091A',
-              border: '1px solid rgba(217, 174, 79, 0.28)',
-              borderRadius: '8px',
-              boxShadow: '0 24px 60px rgba(0, 0, 0, 0.9), 0 0 40px rgba(191, 0, 255, 0.25)',
+              background: '#FAF5EB',
+              border: '1px solid rgba(197, 165, 114, 0.4)',
+              borderRadius: '16px',
+              boxShadow: '0 24px 60px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(160, 126, 68, 0.15)',
               width: '100%',
-              maxWidth: modalTab === 'catalog' ? '600px' : '620px',
+              maxWidth: modalTab === 'catalog' ? '600px' : modalTab === 'strand' ? '550px' : '600px',
               display: 'flex',
               flexDirection: 'column',
               position: 'relative',
               overflow: 'hidden',
-              color: '#EDE8E1'
+              color: '#1A160F',
+              transition: 'max-width 0.25s ease'
             }}
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Top Close Button */}
-            <button
-              onClick={() => setIsCrystalModalOpen(false)}
-              style={{
-                position: 'absolute',
-                top: '18px',
-                right: '20px',
-                width: '30px',
-                height: '30px',
-                borderRadius: '50%',
-                border: '1px solid rgba(255, 255, 255, 0.15)',
-                background: 'rgba(25, 12, 38, 0.7)',
-                color: '#EDE8E1',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                cursor: 'pointer',
-                transition: 'all 0.2s ease',
-                zIndex: 10
-              }}
-            >
-              <X size={15} />
-            </button>
+            {/* Modal Header for Tab 1 (Crystals) and Tab 3 (Catalog) */}
+            {modalTab !== 'strand' && (
+              <div style={{ padding: '24px 26px 14px', position: 'relative' }}>
+                {/* Top Close Button */}
+                <button
+                  onClick={() => setIsCrystalModalOpen(false)}
+                  style={{
+                    position: 'absolute',
+                    top: '18px',
+                    right: '20px',
+                    width: '32px',
+                    height: '32px',
+                    borderRadius: '50%',
+                    border: '1px solid rgba(197, 165, 114, 0.35)',
+                    background: '#FAF4E8',
+                    color: '#1A160F',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    zIndex: 10,
+                    boxShadow: '0 2px 8px rgba(140, 105, 50, 0.12)'
+                  }}
+                  aria-label="Close modal"
+                >
+                  <X size={15} />
+                </button>
 
-            {/* Modal Header */}
-            <div style={{ padding: '24px 26px 14px' }}>
-              <div style={{
-                fontSize: '10.5px',
-                letterSpacing: '0.14em',
-                textTransform: 'uppercase',
-                color: '#E5C378',
-                fontWeight: 600,
-                marginBottom: '4px'
-              }}>
-                {modalTab === 'catalog' ? 'CATALOG' : (selectedIntention?.title || selectedPurpose?.title)}
-              </div>
-              <h2 style={{
-                fontSize: '20px',
-                fontWeight: 600,
-                color: '#FFFFFF',
-                letterSpacing: '0.03em',
-                textTransform: 'uppercase',
-                margin: '0 0 16px',
-                fontFamily: 'var(--font-sans, system-ui, sans-serif)'
-              }}>
-                {modalTab === 'crystals'
-                  ? 'RECOMMENDED CRYSTALS'
-                  : modalTab === 'strand'
-                  ? 'BUILD YOUR BRACELET'
-                  : 'ADD ANOTHER CRYSTAL'}
-              </h2>
-
-              {modalTab !== 'catalog' && (
                 <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '24px',
-                  borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-                  marginBottom: '16px'
+                  fontSize: '10.5px',
+                  letterSpacing: '0.14em',
+                  textTransform: 'uppercase',
+                  color: '#8C6F3D',
+                  fontWeight: 700,
+                  marginBottom: '4px'
                 }}>
-                  <button
-                    onClick={() => setModalTab('crystals')}
-                    style={{
-                      background: 'none',
-                      border: 'none',
-                      borderBottom: modalTab === 'crystals' ? '2px solid #E5C378' : '2px solid transparent',
-                      padding: '6px 0 10px',
-                      color: modalTab === 'crystals' ? '#E5C378' : '#8E8A9A',
-                      fontSize: '11px',
-                      fontWeight: 600,
-                      letterSpacing: '0.12em',
-                      cursor: 'pointer',
-                      marginBottom: '-1px',
-                      textTransform: 'uppercase',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '6px'
-                    }}
-                  >
-                    <span>01</span>
-                    <span>CRYSTALS</span>
-                  </button>
-
-                  <button
-                    onClick={() => setModalTab('strand')}
-                    style={{
-                      background: 'none',
-                      border: 'none',
-                      borderBottom: modalTab === 'strand' ? '2px solid #E5C378' : '2px solid transparent',
-                      padding: '6px 0 10px',
-                      color: modalTab === 'strand' ? '#E5C378' : '#8E8A9A',
-                      fontSize: '11px',
-                      fontWeight: 600,
-                      letterSpacing: '0.12em',
-                      cursor: 'pointer',
-                      marginBottom: '-1px',
-                      textTransform: 'uppercase',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '6px'
-                    }}
-                  >
-                    <span>02</span>
-                    <span>STRAND</span>
-                  </button>
+                  {modalTab === 'catalog' ? 'CATALOG' : (selectedIntention?.title || selectedPurpose?.title)}
                 </div>
-              )}
+                <h2 style={{
+                  fontSize: '20px',
+                  fontWeight: 700,
+                  color: '#1A160F',
+                  letterSpacing: '0.03em',
+                  textTransform: 'uppercase',
+                  margin: '0 0 16px',
+                  fontFamily: 'var(--font-sans, system-ui, sans-serif)'
+                }}>
+                  {modalTab === 'crystals'
+                    ? 'RECOMMENDED CRYSTALS'
+                    : 'ADD ANOTHER CRYSTAL'}
+                </h2>
 
-              <p style={{
-                fontSize: '12.5px',
-                color: '#8E8A9A',
-                margin: 0,
-                lineHeight: 1.5
-              }}>
-                {modalTab === 'crystals'
-                  ? 'These are the traditional stones for your choice. All start on the strand; tap one to leave it out.'
-                  : modalTab === 'strand'
-                  ? 'Set the strand length, then how many of each crystal.'
-                  : 'Each one joins the strand with a single bead. Adjust the counts afterwards.'}
-              </p>
-            </div>
+                <p style={{
+                  fontSize: '12.5px',
+                  color: '#695B44',
+                  margin: 0,
+                  lineHeight: 1.5
+                }}>
+                  {modalTab === 'crystals'
+                    ? 'These are the traditional stones for your choice. All start on the strand; tap one to leave it out.'
+                    : 'Each one joins the strand with a single bead. Adjust the counts afterwards.'}
+                </p>
+              </div>
+            )}
 
             {/* TAB 1: 01 CRYSTALS */}
             {modalTab === 'crystals' && (
@@ -2536,21 +2489,22 @@ export const StudioBuilderPage = () => {
                           key={c.id}
                           onClick={() => toggleModalCrystal(c.id)}
                           style={{
-                            background: isSelected ? 'rgba(38, 12, 60, 0.65)' : 'rgba(20, 8, 30, 0.45)',
-                            border: isSelected ? '1.5px solid #D9AE4F' : '1px solid rgba(255, 255, 255, 0.12)',
-                            borderRadius: '6px',
+                            background: isSelected ? '#FAF4E8' : 'rgba(239, 228, 207, 0.45)',
+                            border: isSelected ? '1.5px solid #D9AE4F' : '1px solid rgba(197, 165, 114, 0.32)',
+                            borderRadius: '8px',
                             padding: '8px',
                             cursor: 'pointer',
                             position: 'relative',
                             transition: 'all 0.2s ease',
-                            boxShadow: isSelected ? '0 0 16px rgba(217, 174, 79, 0.25)' : 'none'
+                            boxShadow: isSelected ? '0 4px 16px rgba(160, 126, 68, 0.18)' : '0 2px 8px rgba(160, 126, 68, 0.05)'
                           }}
                         >
                           <div style={{
                             position: 'relative',
                             width: '100%',
                             aspectRatio: '1/1',
-                            borderRadius: '4px',
+                            borderRadius: '6px',
+                            background: '#EFE4CF',
                             overflow: 'hidden',
                             marginBottom: '8px'
                           }}>
@@ -2569,12 +2523,12 @@ export const StudioBuilderPage = () => {
                               <div style={{
                                 position: 'absolute',
                                 inset: 0,
-                                background: 'rgba(10, 5, 18, 0.65)',
+                                background: 'rgba(250, 245, 235, 0.85)',
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center'
                               }}>
-                                <span style={{ fontSize: '10px', color: '#8E8A9A', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600 }}>
+                                <span style={{ fontSize: '10px', color: '#8C6F3D', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700 }}>
                                   Removed
                                 </span>
                               </div>
@@ -2583,7 +2537,7 @@ export const StudioBuilderPage = () => {
                           <div style={{
                             fontSize: '12px',
                             fontWeight: 600,
-                            color: isSelected ? '#FFFFFF' : '#8E8A9A',
+                            color: isSelected ? '#1A160F' : '#8C7245',
                             marginBottom: '2px',
                             whiteSpace: 'nowrap',
                             overflow: 'hidden',
@@ -2591,7 +2545,7 @@ export const StudioBuilderPage = () => {
                           }}>
                             {c.name}
                           </div>
-                          <div style={{ fontSize: '10.5px', color: '#8E8A9A' }}>
+                          <div style={{ fontSize: '10.5px', color: '#695B44' }}>
                             ₹{c.pricePerBead % 1 === 0 ? c.pricePerBead : c.pricePerBead.toFixed(2)} / bead
                           </div>
                         </div>
@@ -2602,19 +2556,19 @@ export const StudioBuilderPage = () => {
 
                 {/* Footer */}
                 <div style={{
-                  borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+                  borderTop: '1px solid rgba(197, 165, 114, 0.3)',
                   padding: '16px 26px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
-                  background: 'rgba(15, 7, 24, 0.95)'
+                  background: '#FAF4E8'
                 }}>
                   <span style={{
                     fontSize: '11px',
                     letterSpacing: '0.12em',
                     textTransform: 'uppercase',
-                    color: '#EDE8E1',
-                    fontWeight: 600
+                    color: '#8C6F3D',
+                    fontWeight: 700
                   }}>
                     {modalCrystals.slice(0, 4).filter(c => c.active).length} OF {modalCrystals.slice(0, 4).length} SELECTED
                   </span>
@@ -2638,266 +2592,380 @@ export const StudioBuilderPage = () => {
               </>
             )}
 
-            {/* TAB 2: 02 STRAND */}
+            {/* TAB 2: BUILD YOUR BRACELET (EXACT MATCH TO REFERENCE IMAGE) */}
             {modalTab === 'strand' && (
               <>
-                <div style={{ padding: '0 26px 20px', maxHeight: '420px', overflowY: 'auto' }}>
-                  {/* Add another crystal button top row */}
-                  <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '16px' }}>
-                    <button
-                      onClick={() => setModalTab('catalog')}
-                      style={{
-                        background: 'transparent',
-                        border: '1px solid rgba(217, 174, 79, 0.5)',
-                        color: '#EDE8E1',
-                        borderRadius: '9999px',
-                        padding: '6px 14px',
-                        fontSize: '11px',
-                        cursor: 'pointer',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '6px',
-                        transition: 'all 0.2s ease'
-                      }}
-                    >
-                      <Plus size={12} />
-                      <span>Add another crystal</span>
-                    </button>
-                  </div>
-
-                  {/* STRAND LENGTH */}
-                  <div style={{ marginBottom: '22px' }}>
-                    <div style={{
-                      fontSize: '10.5px',
-                      letterSpacing: '0.12em',
-                      textTransform: 'uppercase',
-                      color: '#E5C378',
-                      fontWeight: 600,
-                      marginBottom: '10px'
-                    }}>
-                      STRAND LENGTH
-                    </div>
-                    <div style={{
-                      display: 'grid',
-                      gridTemplateColumns: 'repeat(3, 1fr)',
-                      gap: '10px'
-                    }}>
-                      {[
-                        { count: 16, price: 2140 },
-                        { count: 18, price: 2407.50 },
-                        { count: 22, price: 2942.50 }
-                      ].map(opt => {
-                        const isSelected = modalStrandLength === opt.count;
-                        return (
-                          <button
-                            key={opt.count}
-                            onClick={() => setModalStrandLength(opt.count)}
-                            style={{
-                              background: isSelected ? 'rgba(38, 12, 60, 0.85)' : 'rgba(20, 8, 30, 0.6)',
-                              border: isSelected ? '1.5px solid #D9AE4F' : '1px solid rgba(255, 255, 255, 0.12)',
-                              borderRadius: '4px',
-                              padding: '12px 10px',
-                              color: '#FFFFFF',
-                              cursor: 'pointer',
-                              display: 'flex',
-                              alignItems: 'center',
-                              justifyContent: 'center',
-                              gap: '8px',
-                              fontSize: '12.5px',
-                              boxShadow: isSelected ? '0 0 16px rgba(217, 174, 79, 0.2)' : 'none',
-                              transition: 'all 0.2s ease'
-                            }}
-                          >
-                            <span style={{ fontWeight: 600 }}>{opt.count} beads</span>
-                            <span style={{ color: '#C5A572', fontSize: '11px' }}>
-                              ₹{opt.price.toLocaleString('en-IN', { minimumFractionDigits: opt.price % 1 === 0 ? 0 : 2 })}
-                            </span>
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </div>
-
-                  {/* BEADS ON THE STRAND */}
-                  <div>
-                    <div style={{
+                {/* Header Section */}
+                <div style={{ padding: '24px 26px 0', position: 'relative' }}>
+                  {/* Clean Close Button matching image */}
+                  <button
+                    onClick={() => setIsCrystalModalOpen(false)}
+                    style={{
+                      position: 'absolute',
+                      top: '22px',
+                      right: '24px',
+                      background: 'none',
+                      border: 'none',
+                      color: '#695B44',
+                      cursor: 'pointer',
+                      padding: '4px',
                       display: 'flex',
                       alignItems: 'center',
-                      justifyContent: 'space-between',
-                      marginBottom: '12px'
-                    }}>
-                      <span style={{
-                        fontSize: '10.5px',
-                        letterSpacing: '0.12em',
-                        textTransform: 'uppercase',
-                        color: '#E5C378',
-                        fontWeight: 600
-                      }}>
-                        BEADS ON THE STRAND
-                      </span>
-                      <span style={{
-                        fontSize: '11px',
-                        color: modalTotalBeads === modalStrandLength ? '#E5C378' : '#8E8A9A'
-                      }}>
-                        {modalTotalBeads} of {modalStrandLength} complete
-                      </span>
-                    </div>
+                      justifyContent: 'center',
+                      transition: 'color 0.2s ease',
+                      zIndex: 10
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = '#1A160F'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = '#695B44'}
+                    aria-label="Close modal"
+                  >
+                    <X size={18} strokeWidth={2.2} />
+                  </button>
 
-                    <div style={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      gap: '8px'
-                    }}>
-                      {modalActiveCrystals.map((c) => {
-                        const itemTotal = (c.count || 0) * (c.pricePerBead || 0);
-                        return (
-                          <div
-                            key={c.id}
-                            style={{
-                              display: 'flex',
-                              alignItems: 'center',
-                              justifyContent: 'space-between',
-                              padding: '8px 12px',
-                              background: 'rgba(25, 10, 38, 0.55)',
-                              border: '1px solid rgba(255, 255, 255, 0.08)',
-                              borderRadius: '6px'
-                            }}
-                          >
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                              <img
-                                src={c.img}
-                                alt={c.name}
-                                style={{
-                                  width: '36px',
-                                  height: '36px',
-                                  borderRadius: '6px',
-                                  objectFit: 'cover'
-                                }}
-                              />
-                              <div>
-                                <div style={{ fontSize: '12.5px', fontWeight: 600, color: '#FFFFFF' }}>
-                                  {c.name}
-                                </div>
-                                <div style={{ fontSize: '11px', color: '#8E8A9A' }}>
-                                  ₹{c.pricePerBead % 1 === 0 ? c.pricePerBead : c.pricePerBead.toFixed(2)} / bead · ₹{itemTotal % 1 === 0 ? itemTotal : itemTotal.toFixed(2)}
-                                </div>
-                              </div>
-                            </div>
-
-                            {/* Counter Stepper */}
-                            <div style={{
-                              display: 'flex',
-                              alignItems: 'center',
-                              border: '1px solid rgba(255, 255, 255, 0.2)',
-                              borderRadius: '4px',
-                              overflow: 'hidden',
-                              background: 'rgba(15, 6, 22, 0.7)'
-                            }}>
-                              <button
-                                onClick={() => adjustModalCrystalCount(c.id, -1)}
-                                style={{
-                                  background: 'none',
-                                  border: 'none',
-                                  color: '#EDE8E1',
-                                  padding: '5px 9px',
-                                  cursor: 'pointer',
-                                  display: 'flex',
-                                  alignItems: 'center'
-                                }}
-                              >
-                                <Minus size={11} />
-                              </button>
-                              <span style={{
-                                padding: '0 8px',
-                                fontSize: '12px',
-                                fontWeight: 600,
-                                color: '#FFFFFF',
-                                minWidth: '18px',
-                                textAlign: 'center'
-                              }}>
-                                {c.count}
-                              </span>
-                              <button
-                                onClick={() => adjustModalCrystalCount(c.id, 1)}
-                                style={{
-                                  background: 'none',
-                                  border: 'none',
-                                  color: '#EDE8E1',
-                                  padding: '5px 9px',
-                                  cursor: 'pointer',
-                                  display: 'flex',
-                                  alignItems: 'center'
-                                }}
-                              >
-                                <Plus size={11} />
-                              </button>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
+                  {/* Eyebrow */}
+                  <div style={{
+                    fontSize: '10.5px',
+                    letterSpacing: '0.14em',
+                    textTransform: 'uppercase',
+                    color: '#8C6F3D',
+                    fontWeight: 700,
+                    marginBottom: '6px'
+                  }}>
+                    {((selectedPurpose?.title || 'BUSINESS OWNER') + ' / ' + (selectedIntention?.title || 'ENTREPRENEUR')).toUpperCase()}
                   </div>
+
+                  {/* Title in Serif font matching reference image */}
+                  <h2 style={{
+                    fontSize: '23px',
+                    fontWeight: 600,
+                    color: '#8C6F3D',
+                    letterSpacing: '0.05em',
+                    textTransform: 'uppercase',
+                    margin: '0 0 6px',
+                    fontFamily: 'var(--font-brand, "Cinzel", Georgia, serif)'
+                  }}>
+                    BUILD YOUR BRACELET
+                  </h2>
+
+                  {/* Subtitle */}
+                  <p style={{
+                    fontSize: '13px',
+                    color: '#695B44',
+                    margin: 0,
+                    lineHeight: 1.45
+                  }}>
+                    Choose 16, 18, or 22 beads, then set how many of each crystal.
+                  </p>
+
+                  {/* Horizontal Divider Line */}
+                  <div style={{
+                    height: '1px',
+                    background: 'rgba(197, 165, 114, 0.35)',
+                    margin: '18px 0 20px'
+                  }} />
                 </div>
 
-                {/* Footer */}
+                {/* Body Content with smooth scrolling */}
+                <div style={{ padding: '0 26px 20px', maxHeight: '430px', overflowY: 'auto' }}>
+                  {/* Strand Length 3-Box Selector */}
+                  <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(3, 1fr)',
+                    gap: '12px',
+                    marginBottom: '22px'
+                  }}>
+                    {[
+                      { count: 16, price: 681.88 },
+                      { count: 18, price: 681.88 },
+                      { count: 22, price: 925.63 }
+                    ].map(opt => {
+                      const isSelected = modalStrandLength === opt.count;
+                      const avgPrice = modalTotalBeads > 0 ? (modalBeadSubtotal / modalTotalBeads) : 37.882;
+                      const calculatedPrice = opt.count === 18 && modalBeadSubtotal > 0
+                        ? modalBeadSubtotal
+                        : Math.round(opt.count * avgPrice * 100) / 100;
+
+                      return (
+                        <button
+                          key={opt.count}
+                          type="button"
+                          onClick={() => setModalStrandLength(opt.count)}
+                          style={{
+                            background: isSelected ? '#FAF4E8' : 'rgba(239, 228, 207, 0.45)',
+                            border: isSelected ? '1.5px solid #D9AE4F' : '1px solid rgba(197, 165, 114, 0.35)',
+                            borderRadius: '14px',
+                            padding: '14px 10px',
+                            cursor: 'pointer',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            gap: '4px',
+                            boxShadow: isSelected ? '0 4px 16px rgba(160, 126, 68, 0.16)' : 'none',
+                            transition: 'all 0.2s ease'
+                          }}
+                        >
+                          <span style={{
+                            fontFamily: 'var(--font-brand, "Cinzel", Georgia, serif)',
+                            fontSize: '13.5px',
+                            fontWeight: 600,
+                            color: '#1A160F',
+                            letterSpacing: '0.04em',
+                            textTransform: 'uppercase'
+                          }}>
+                            {opt.count} BEADS
+                          </span>
+                          <span style={{
+                            fontSize: '11.5px',
+                            color: '#8C6F3D',
+                            fontWeight: 600
+                          }}>
+                            ₹{calculatedPrice.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  {/* Section Label: ✔ SELECT CRYSTALS (RECOMMENDED) */}
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    marginBottom: '14px'
+                  }}>
+                    <CheckCircle2 size={16} color="#8C6F3D" strokeWidth={2.2} />
+                    <span style={{
+                      fontSize: '11px',
+                      letterSpacing: '0.12em',
+                      textTransform: 'uppercase',
+                      color: '#8C6F3D',
+                      fontWeight: 700
+                    }}>
+                      SELECT CRYSTALS (RECOMMENDED)
+                    </span>
+                  </div>
+
+                  {/* List of Crystal Cards matching the reference image */}
+                  <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '10px'
+                  }}>
+                    {modalActiveCrystals.map((c) => {
+                      const itemTotal = (c.count || 0) * (c.pricePerBead || 0);
+                      const formattedTotal = itemTotal % 1 === 0 ? itemTotal : itemTotal.toFixed(2);
+                      const formattedPerBead = (c.pricePerBead || 0) % 1 === 0 ? c.pricePerBead : (c.pricePerBead || 0).toFixed(2);
+
+                      return (
+                        <div
+                          key={c.id}
+                          style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'space-between',
+                            padding: '12px 18px',
+                            background: '#FAF4E8',
+                            border: '1px solid rgba(197, 165, 114, 0.4)',
+                            borderRadius: '14px',
+                            boxShadow: '0 2px 8px rgba(160, 126, 68, 0.06)'
+                          }}
+                        >
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+                            <img
+                              src={c.img}
+                              alt={c.name}
+                              style={{
+                                width: '46px',
+                                height: '46px',
+                                borderRadius: '50%',
+                                objectFit: 'cover',
+                                border: '1.5px solid rgba(197, 165, 114, 0.35)',
+                                background: '#EFE4CF',
+                                flexShrink: 0
+                              }}
+                            />
+                            <div>
+                              <div style={{
+                                fontFamily: 'var(--font-brand, "Cinzel", Georgia, serif)',
+                                fontSize: '15px',
+                                fontWeight: 600,
+                                color: '#1A160F',
+                                letterSpacing: '0.05em',
+                                textTransform: 'uppercase'
+                              }}>
+                                {c.name}
+                              </div>
+                              <div style={{ fontSize: '12px', color: '#8C6F3D', fontWeight: 500, marginTop: '2px' }}>
+                                ₹{formattedTotal} · ₹{formattedPerBead} / bead
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Pill Stepper */}
+                          <div style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '4px',
+                            background: '#FAF5EB',
+                            border: '1.2px solid rgba(197, 165, 114, 0.55)',
+                            borderRadius: '9999px',
+                            padding: '3px 8px',
+                            boxShadow: '0 1px 4px rgba(160, 126, 68, 0.08)'
+                          }}>
+                            <button
+                              type="button"
+                              onClick={() => adjustModalCrystalCount(c.id, -1)}
+                              style={{
+                                background: 'none',
+                                border: 'none',
+                                color: '#1A160F',
+                                width: '24px',
+                                height: '24px',
+                                borderRadius: '4px',
+                                cursor: 'pointer',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                transition: 'background 0.15s ease'
+                              }}
+                              onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(197, 165, 114, 0.25)'}
+                              onMouseLeave={(e) => e.currentTarget.style.background = 'none'}
+                              aria-label={`Decrease ${c.name} count`}
+                            >
+                              <Minus size={13} strokeWidth={2.2} />
+                            </button>
+                            <span style={{
+                              fontSize: '13.5px',
+                              fontWeight: 700,
+                              color: '#1A160F',
+                              minWidth: '22px',
+                              textAlign: 'center'
+                            }}>
+                              {c.count}
+                            </span>
+                            <button
+                              type="button"
+                              onClick={() => adjustModalCrystalCount(c.id, 1)}
+                              style={{
+                                background: 'none',
+                                border: 'none',
+                                color: '#1A160F',
+                                width: '24px',
+                                height: '24px',
+                                borderRadius: '4px',
+                                cursor: 'pointer',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                transition: 'background 0.15s ease'
+                              }}
+                              onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(197, 165, 114, 0.25)'}
+                              onMouseLeave={(e) => e.currentTarget.style.background = 'none'}
+                              aria-label={`Increase ${c.name} count`}
+                            >
+                              <Plus size={13} strokeWidth={2.2} />
+                            </button>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* + ADD MORE CRYSTALS Full-width Button */}
+                  <button
+                    type="button"
+                    onClick={() => setModalTab('catalog')}
+                    style={{
+                      width: '100%',
+                      background: 'rgba(239, 228, 207, 0.25)',
+                      border: '1.5px dashed rgba(197, 165, 114, 0.65)',
+                      borderRadius: '14px',
+                      padding: '13px 18px',
+                      color: '#8C6F3D',
+                      fontSize: '11.5px',
+                      fontWeight: 700,
+                      letterSpacing: '0.14em',
+                      textTransform: 'uppercase',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '8px',
+                      marginTop: '12px',
+                      transition: 'all 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = 'rgba(239, 228, 207, 0.55)';
+                      e.currentTarget.style.borderColor = '#D9AE4F';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = 'rgba(239, 228, 207, 0.25)';
+                      e.currentTarget.style.borderColor = 'rgba(197, 165, 114, 0.65)';
+                    }}
+                  >
+                    <Plus size={14} strokeWidth={2.5} />
+                    <span>ADD MORE CRYSTALS</span>
+                  </button>
+                </div>
+
+                {/* Footer Section matching reference image */}
                 <div style={{
-                  borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+                  borderTop: '1px solid rgba(197, 165, 114, 0.35)',
                   padding: '16px 26px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
-                  background: 'rgba(15, 7, 24, 0.95)'
+                  background: '#FAF4E8'
                 }}>
-                  <div>
-                    <div style={{
-                      fontSize: '10px',
-                      letterSpacing: '0.12em',
-                      textTransform: 'uppercase',
-                      color: '#8E8A9A',
-                      fontWeight: 600
-                    }}>
-                      {modalTotalBeads} BEADS
-                    </div>
-                    <div style={{
-                      fontSize: '18px',
+                  <button
+                    type="button"
+                    onClick={() => setModalTab('crystals')}
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      color: '#8C6F3D',
+                      fontSize: '12px',
                       fontWeight: 700,
-                      color: '#FFFFFF'
-                    }}>
-                      ₹{modalTotalWithThread.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-                    </div>
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <button
-                      onClick={() => setModalTab('crystals')}
-                      style={{
-                        background: 'transparent',
-                        border: '1px solid rgba(255, 255, 255, 0.22)',
-                        color: '#EDE8E1',
-                        padding: '8px 18px',
-                        borderRadius: '4px',
-                        fontSize: '12px',
-                        cursor: 'pointer'
-                      }}
-                    >
-                      Back
-                    </button>
-                    <button
-                      onClick={applyModalCrystals}
-                      style={{
-                        background: 'linear-gradient(135deg, #ECC26A 0%, #D4AF37 100%)',
-                        color: '#0A0810',
-                        fontWeight: 600,
-                        fontSize: '12px',
-                        padding: '9px 22px',
-                        borderRadius: '4px',
-                        border: 'none',
-                        cursor: 'pointer',
-                        boxShadow: '0 4px 14px rgba(212, 175, 55, 0.3)'
-                      }}
-                    >
-                      Use these crystals
-                    </button>
-                  </div>
+                      letterSpacing: '0.14em',
+                      textTransform: 'uppercase',
+                      cursor: 'pointer',
+                      padding: '8px 4px',
+                      transition: 'color 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = '#1A160F'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = '#8C6F3D'}
+                  >
+                    BACK
+                  </button>
+                  <button
+                    type="button"
+                    onClick={applyModalCrystals}
+                    style={{
+                      background: '#1A160F',
+                      color: '#EAD7A5',
+                      fontWeight: 700,
+                      fontSize: '11px',
+                      letterSpacing: '0.14em',
+                      textTransform: 'uppercase',
+                      padding: '12px 26px',
+                      borderRadius: '9999px',
+                      border: '1.5px solid #C5A572',
+                      cursor: 'pointer',
+                      boxShadow: '0 4px 14px rgba(26, 22, 15, 0.2)',
+                      transition: 'all 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = '#2B2319';
+                      e.currentTarget.style.borderColor = '#D9AE4F';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = '#1A160F';
+                      e.currentTarget.style.borderColor = '#C5A572';
+                    }}
+                  >
+                    USE THESE CRYSTALS
+                  </button>
                 </div>
               </>
             )}
@@ -2919,20 +2987,22 @@ export const StudioBuilderPage = () => {
                         key={stone.id}
                         onClick={() => addCatalogCrystalToModal(stone)}
                         style={{
-                          background: 'rgba(25, 10, 38, 0.6)',
-                          border: '1px solid rgba(255, 255, 255, 0.1)',
-                          borderRadius: '6px',
+                          background: '#FAF4E8',
+                          border: '1px solid rgba(197, 165, 114, 0.35)',
+                          borderRadius: '8px',
                           padding: '8px',
                           cursor: 'pointer',
                           transition: 'all 0.2s ease',
-                          position: 'relative'
+                          position: 'relative',
+                          boxShadow: '0 2px 8px rgba(160, 126, 68, 0.08)'
                         }}
                       >
                         <div style={{
                           position: 'relative',
                           width: '100%',
                           aspectRatio: '1/1',
-                          borderRadius: '4px',
+                          borderRadius: '6px',
+                          background: '#EFE4CF',
                           overflow: 'hidden',
                           marginBottom: '8px'
                         }}>
@@ -2945,23 +3015,24 @@ export const StudioBuilderPage = () => {
                             position: 'absolute',
                             top: '6px',
                             right: '6px',
-                            width: '18px',
-                            height: '18px',
+                            width: '20px',
+                            height: '20px',
                             borderRadius: '50%',
-                            background: 'rgba(10, 8, 16, 0.75)',
-                            border: '1px solid rgba(255, 255, 255, 0.3)',
+                            background: '#FAF5EB',
+                            border: '1px solid rgba(197, 165, 114, 0.5)',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
-                            color: '#FFFFFF'
+                            color: '#1A160F',
+                            boxShadow: '0 2px 4px rgba(140, 105, 50, 0.15)'
                           }}>
-                            <Plus size={11} />
+                            <Plus size={11} strokeWidth={2.5} />
                           </div>
                         </div>
                         <div style={{
                           fontSize: '12px',
                           fontWeight: 600,
-                          color: '#FFFFFF',
+                          color: '#1A160F',
                           marginBottom: '2px',
                           whiteSpace: 'nowrap',
                           overflow: 'hidden',
@@ -2969,7 +3040,7 @@ export const StudioBuilderPage = () => {
                         }}>
                           {stone.name}
                         </div>
-                        <div style={{ fontSize: '10.5px', color: '#8E8A9A' }}>
+                        <div style={{ fontSize: '10.5px', color: '#695B44' }}>
                           ₹{stone.pricePerBead.toLocaleString('en-IN', { minimumFractionDigits: stone.pricePerBead % 1 === 0 ? 0 : 2 })} / bead
                         </div>
                       </div>
@@ -2979,19 +3050,19 @@ export const StudioBuilderPage = () => {
 
                 {/* Footer */}
                 <div style={{
-                  borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+                  borderTop: '1px solid rgba(197, 165, 114, 0.3)',
                   padding: '16px 26px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
-                  background: 'rgba(15, 7, 24, 0.95)'
+                  background: '#FAF4E8'
                 }}>
                   <span style={{
                     fontSize: '10.5px',
                     letterSpacing: '0.14em',
                     textTransform: 'uppercase',
-                    color: '#C5A572',
-                    fontWeight: 600
+                    color: '#8C6F3D',
+                    fontWeight: 700
                   }}>
                     TAP A CRYSTAL TO ADD IT
                   </span>
@@ -3005,7 +3076,8 @@ export const StudioBuilderPage = () => {
                       padding: '9px 24px',
                       borderRadius: '4px',
                       border: 'none',
-                      cursor: 'pointer'
+                      cursor: 'pointer',
+                      boxShadow: '0 4px 14px rgba(212, 175, 55, 0.3)'
                     }}
                   >
                     Close
